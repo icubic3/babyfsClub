@@ -1,46 +1,21 @@
 <template>
-  <div class="counter-warp">
-    <p>Vuex counter：{{ count }}</p>
-    <p>
-      <button @click="increment">+</button>
-      <button @click="decrement">-</button>
-    </p>
-
-    <a href="/pages/index/main" class="home">这是首页</a>
+  <div class="container">
+       我是首页11
   </div>
 </template>
 
 <script>
-// Use Vuex
-import store from './store'
 
 export default {
-  computed: {
-    count () {
-      return store.state.count
-    }
+  data () {
+    return { }
   },
-  methods: {
-    increment () {
-      store.commit('increment')
-    },
-    decrement () {
-      store.commit('decrement')
-    }
-  }
+  methods: {},
+
+  created () {}
 }
 </script>
 
-<style>
-.counter-warp {
-  text-align: center;
-  margin-top: 100px;
-}
-.home {
-  display: inline-block;
-  margin: 100px auto;
-  padding: 5px 10px;
-  color: blue;
-  border: 1px solid blue;
-}
+<style scoped>
+
 </style>
