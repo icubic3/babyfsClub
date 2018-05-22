@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-       我是首页11
+      <button @click="goToCreatAClub" class="reqBtn">创建一个社团</button>
+      <button @click="goToFindAClub" class="reqBtn">寻找感兴趣的社团</button>
   </div>
 </template>
 
@@ -10,12 +11,23 @@ export default {
   data () {
     return { }
   },
-  methods: {},
+  methods: {
+    goToCreatAClub(){
+      wx.navigateTo({ url: '../creatClubPage/main'});
+    },
+    goToFindAClub(){
+      wx.navigateTo({ url: '../searchClubPage/main'});
+    }
+  },
 
   created () {}
 }
 </script>
 
 <style scoped>
+.reqBtn{
+  width: 55%;
+  margin: 10pt;
+}
 
 </style>

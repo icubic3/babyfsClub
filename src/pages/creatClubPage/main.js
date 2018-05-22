@@ -6,6 +6,6 @@ app.$mount()
 
 export default {
     config: {
-        navigationBarTitleText: '宝玩社团首页'
+        navigationBarTitleText: '创建一个你感兴趣的社团'
     }
 }
