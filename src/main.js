@@ -32,7 +32,8 @@ export default {
           text:'个人页'
         }
       ],
-      color:'66ccff'
+      color:'#333333',
+      selectedColor:'#FF5066'
     }
   }
 }

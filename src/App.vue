@@ -1,10 +1,25 @@
 <script>
 export default {
-  created () {
+  data () {
+    return{
+      loginCode:null,
+    } 
+  },
+
+  created() {
     // 调用API从本地缓存中获取数据
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    
+    //登录微信，并且获得code
+    wx.login({
+        success: res => {
+          this.loginCode=res.code;
+          },
+        fail: () => {},
+        complete: () => {}
+    });
   }
 }
 </script>

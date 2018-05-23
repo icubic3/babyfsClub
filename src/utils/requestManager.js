@@ -1,13 +1,18 @@
-export function testGet (result){
+export default{
+  testGet (result){
     wx.request({
-      url: 'https://ip4ezbxh.qcloud.la/weapp/test', //开发者服务器接口地址",
+      url: 'https://ip4ezbxh.qcloud.la/weapp/test',
       method: 'GET',
       dataType: 'json', //如果设为json，会尝试对返回的数据做一次 JSON.parse
-      success: res => {result=res},
+      success: res => {result(res)},
       fail: () => {showNetworkError()},
       complete: () => {}
     });
+  }
 }
+
+
+
 
 function showNetworkError(){
     wx.showToast({
