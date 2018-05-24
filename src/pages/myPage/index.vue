@@ -3,7 +3,7 @@
     <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
     <open-data type="userNickName"></open-data>
 
-    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGetUserInfo">获取用户信息</button>
+    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGetUserInfo">点击获取我的社团信息</button>
   </div>
 </template>
 
