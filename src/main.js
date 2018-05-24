@@ -14,7 +14,8 @@ export default {
     pages: ['^pages/firstPage/main', 
             'pages/myPage/main',
             'pages/creatClubPage/main',
-            'pages/searchClubPage/main'],
+            'pages/searchClubPage/main',
+            'pages/searchClubPage/clubDetails/main'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',

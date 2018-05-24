@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
-       我是搜索页
+  <div class="listContainer">
+    <div class="listItems" v-for="(item,index) in clubList" :key="index" @click="chooseClub(item.name)">
+       {{item.name}}
+    </div>
   </div>
 </template>
 
@@ -8,9 +10,19 @@
 
 export default {
   data () {
-    return { }
+    return {
+      clubList : [
+        {name:'足球社团'},
+        {name:'篮球社团'},
+        {name:'羽毛球社团'},
+      ]
+    }
   },
   methods: {
+    chooseClub(e){
+      var pageUrl = 'clubDetails/main?title=' + e
+      wx.navigateTo({ url: pageUrl });
+    },
       sendReq(){
         console.log('发送请求')
           wx.request({
@@ -29,5 +41,20 @@ export default {
 </script>
 
 <style scoped>
+
+.listContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listItems{
+  width: 100%;
+  padding: 10px;
+  margin: 3px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+
+}
 
 </style>
