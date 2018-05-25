@@ -1,6 +1,6 @@
 <template>
   <div class="listContainer">
-
+    <text>扫码来加入社团群</text>
   </div>
 </template>
 

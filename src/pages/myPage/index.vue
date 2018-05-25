@@ -22,16 +22,13 @@ export default {
   },
 
   onGetUserInfo: function(e) {
-    console.log(e)
-    console.log(e.detail.encryptedData)
-    console.log(e.detail.userInfo)
-    console.log(e.detail.rawData)
+
   },
 
   created () {
     wx.getUserInfo({
       withCredentials: false,
-      success: res => {console.log(res)},
+      success: res => {},
       fail: () => {console.log('failed')},
       complete: () => {}
     });

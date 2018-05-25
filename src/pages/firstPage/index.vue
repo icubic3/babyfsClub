@@ -1,7 +1,7 @@
 <template>
   <div class="container">
       <button @click="goToCreatAClub" class="reqBtn">创建一个社团</button>
-      <button @click="goToFindAClub" class="reqBtn">寻找感兴趣的社团</button>
+      <button @click="goToFindAClub" class="reqBtn">加入感兴趣的社团</button>
   </div>
 </template>
 
