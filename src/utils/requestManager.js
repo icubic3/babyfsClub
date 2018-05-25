@@ -1,17 +1,45 @@
+var serverDomain = 'https://ip4ezbxh.qcloud.la/weapp/'
+
+var creatClubUrl = 'addClub'
+var getClubListUrl = 'clubList'
+
+
 export default{
   testGet (result){
-    wx.request({
-      url: 'https://ip4ezbxh.qcloud.la/weapp/test',
-      method: 'GET',
-      dataType: 'json', //如果设为json，会尝试对返回的数据做一次 JSON.parse
-      success: res => {result(res)},
-      fail: () => {showNetworkError()},
-      complete: () => {}
-    });
+    
+  },
+  creatAClub(data, result){
+    const url = serverDomain + creatClubUrl
+    postRequestWithUrl(url, data, result);
+  },
+  getClubList(result){
+    const url = serverDomain + getClubListUrl
+    getRequestWithUrl(url, result);
   }
 }
 
+function postRequestWithUrl(url,data,result){
+  wx.request({
+    url: url,
+    data: data,
+    method: 'POST',
+    dataType: 'json', //如果设为json，会尝试对返回的数据做一次 JSON.parse
+    success: res => {result(res)},
+    fail: () => {showNetworkError()},
+    complete: () => {}
+  });
+}
 
+function getRequestWithUrl(url,result){
+  wx.request({
+    url: url,
+    method: 'GET',
+    dataType: 'json', //如果设为json，会尝试对返回的数据做一次 JSON.parse
+    success: res => {result(res)},
+    fail: () => {showNetworkError()},
+    complete: () => {}
+  });
+}
 
 
 function showNetworkError(){

@@ -7,15 +7,12 @@
 </template>
 
 <script>
+import requestManager from '@/utils/requestManager'
 
 export default {
   data () {
     return {
-      clubList : [
-        {name:'足球社团'},
-        {name:'篮球社团'},
-        {name:'羽毛球社团'},
-      ]
+      clubList : []
     }
   },
   methods: {
@@ -23,20 +20,13 @@ export default {
       var pageUrl = 'clubDetails/main?title=' + e
       wx.navigateTo({ url: pageUrl });
     },
-      sendReq(){
-        console.log('发送请求')
-          wx.request({
-            url: 'https://ip4ezbxh.qcloud.la/weapp/test', //开发者服务器接口地址",
-            method: 'GET',
-            dataType: 'json', //如果设为json，会尝试对返回的数据做一次 JSON.parse
-            success: res => {console.log(res)},
-            fail: () => {},
-            complete: () => {}
-          });
-      }
   },
-
-  created () {}
+  async onLoad(options){
+     requestManager.getClubList(res => {
+      this.clubList = res.data.data.data.info
+      console.log(res.data.data.data.info)
+    })
+  }
 }
 </script>
 
